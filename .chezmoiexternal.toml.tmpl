@@ -1,0 +1,6 @@
+{{- if eq .chezmoi.os "linux" }}
+[".config/mpv/scripts/modernz.lua"]
+    type = "file"
+    url = "https://github.com/Samillion/ModernZ/releases/download/latest/modernz.lua"
+    checksum.sha256 = "6b83f58554105612c9f97c099e2dacda963c6f60d051a9aff1e5e4321befa3ce"
+{{- end }}
