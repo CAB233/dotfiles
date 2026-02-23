@@ -69,6 +69,3 @@ x GPG_TTY (tty)
 
 # https://wiki.archlinux.org/title/Uniform_look_for_Qt_and_GTK_applications#Consistent_file_dialog
 x GTK_USE_PORTAL 1
-
-# https://wiki.archlinux.org/title/Locale#LANGUAGE:_fallback_locales
-x LANGUAGE zh_CN:en_US:en
