@@ -8,11 +8,8 @@ status is-interactive
 or exit # only add abbreviations under interactive sessions
 
 a s sudo
-
 a ff fastfetch
 
-a ga 'git add'
-a gf 'git fetch'
-a gp 'git pull --ff-only'
-
+{{- if eq .chezmoi.osRelease.id "arch" }}
 a aur 'updpkgsums; makepkg --printsrcinfo > .SRCINFO'
+{{- end }}
