@@ -41,10 +41,17 @@ x LESSHISTFILE              $XDG_DATA_HOME/less/history
 x NPM_CONFIG_USERCONFIG     $XDG_CONFIG_HOME/npm/npmrc
 x WGETRC                    $XDG_CONFIG_HOME/wgetrc
 x PYTHON_HISTORY            $XDG_STATE_HOME/python/history
+x PYTHONPYCACHEPREFIX       $XDG_CACHE_HOME/python
 x WINEPREFIX                $XDG_DATA_HOME/wineprefixes/default
 x _JAVA_OPTIONS             -Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java
 x WINEPREFIX                $XDG_DATA_HOME/wineprefixes/default
 x PARALLEL_HOME             $XDG_CONFIG_HOME/parallel
+
+# https://github.com/openai/codex/issues/1980
+x CODEX_HOME                $XDG_CONFIG_HOME/codex
+
+# https://www.npmjs.com/package/mcp-remote#troubleshooting
+x MCP_REMOTE_CONFIG_DIR     $XDG_DATA_HOME/mcp-auth
 
 # Terminal
 x TERM xterm-256color
