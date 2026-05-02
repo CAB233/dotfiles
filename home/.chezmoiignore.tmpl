@@ -1,0 +1,8 @@
+{{- if ne .chezmoi.os "linux" }}
+*
+!.config/fastfetch/
+!.config/git/
+!.config/mpv/
+
+!.config/startship.toml
+{{- end }}
