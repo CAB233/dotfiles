@@ -4,7 +4,7 @@
 local fcitx = require("fcitx")
 
 local app_im = {
-  ['Alacritty'] = 'keyboard-us',
+  ['org.kde.konsole'] = 'keyboard-us',
   ['org.kde.dolphin'] = 'keyboard-us'
   -- ['code'] = 'keyboard-us'
 }
