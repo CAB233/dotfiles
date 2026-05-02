@@ -1,6 +1,15 @@
-{{- if eq .chezmoi.os "linux" }}
 [".config/mpv/scripts/modernz.lua"]
     type = "file"
-    url = "https://github.com/Samillion/ModernZ/releases/download/latest/modernz.lua"
-    checksum.sha256 = "6b83f58554105612c9f97c099e2dacda963c6f60d051a9aff1e5e4321befa3ce"
-{{- end }}
+    url = {{ gitHubLatestReleaseAssetURL "Samillion/ModernZ" "modernz.lua" | quote }}
+    refreshPeriod = "168h"
+
+[".config/mpv/scripts/inputevent.lua"]
+    type = "file"
+    url = "https://raw.githubusercontent.com/natural-harmonia-gropius/input-event/refs/heads/master/inputevent.lua"\
+    refreshPeriod = "168h"
+
+[".config/mpv/script-opt/modernz-locale.json"]
+    type = "file"
+    url = "https://raw.githubusercontent.com/Samillion/ModernZ/refs/heads/main/extras/locale/modernz-locale.json"
+    refreshPeriod = "168h"
+
