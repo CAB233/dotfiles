@@ -1,5 +1,5 @@
 {
-  "colorscheme": "catppuccin-frappe-transparent",
+  "colorscheme": "atom-dark",
   "autosave": true,
   "basename": true,
   "tabstospaces": true,
@@ -12,7 +12,7 @@
   "literate": true,
   "softwrap": true,
   "statusformatl": " $(filename)",
-  "statusformatr": "行 $(line), 列 $(col)  空格: $(opt:tabsize)  $(opt:encoding)  $(opt:fileformat)  $(opt:filetype) ",
+  "statusformatr": "$(line):$(col)  $(opt:encoding)  $(opt:fileformat)  $(opt:filetype) ",
   "*.json*": {
     "tabsize": 2
   }
