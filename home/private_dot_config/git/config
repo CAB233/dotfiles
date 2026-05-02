@@ -5,7 +5,7 @@
 [safe]
 	directory = *
 [core]
-	editor = nano
+	editor = micro
 	autocrlf = input
 	pager = less -x1,5
 [color]
