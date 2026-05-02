@@ -7,6 +7,9 @@ alias x 'set --global --export'
 
 # 自定义部分
 alias m micro
-alias yay paru
 alias yarn 'yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
 alias ls 'eza --time-style long-iso --modified --group-directories-first --icons'
+
+{{- if eq .chezmoi.osRelease.id "arch" }}
+alias yay paru
+{{- end }}
