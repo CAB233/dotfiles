@@ -1,0 +1,56 @@
+/* simpleMenuWizard */
+/*** When right-clicking on a blank area on a webpage ***/
+#context-navigation,
+#context-back,
+#context-forward,
+#context-reload,
+#context-stop,
+#context-bookmarkpage,
+#context-sep-navigation,
+#context-savepage,
+#context-selectall,
+#context-sep-selectall,
+#context-take-screenshot,
+#context-sep-screenshots,
+#context-viewsource,
+#context-inspect,
+#context-media-eme-separator,
+
+/*** When right-clicking on an image ***/
+#context-sendimage,
+#context-sep-setbackground,
+#context-setDesktopBackground,
+#context-sep-sharing,
+#context-inspect,
+
+/*** When right-clicking on an input-field ***/
+#fill-login,
+#fill-login-generated-password,
+#manage-saved-logins,
+#passwordmgr-items-separator,
+#spell-suggestions-separator,
+#context-undo,
+#context-redo,
+#context-sep-redo,
+
+/*** When right-clicking on a link ***/
+#context-bookmarklink,
+#context-savelink,
+#context-sendlinktodevice #context-searchselect,
+#frame-sep,
+
+/*** When right-clicking on a tab ***/
+#tabContextMenu #context_bookmarkTab,
+#tabContextMenu #context_moveTabOptions,
+#tabContextMenu #context_sendTabToDevice,
+#tabContextMenu #context_selectAllTabs,
+#tabContextMenu #context_closeTabOptions,
+
+/*** When right-clicking on selected text or selected object ***/
+#context-print-selection,
+#context-searchselect,
+#context-translate-selection,
+#context-viewpartialsource-selection,
+#context-inspect-a11y {
+    display: none !important;
+}

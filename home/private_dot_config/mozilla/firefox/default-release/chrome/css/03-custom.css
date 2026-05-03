@@ -1,0 +1,4 @@
+/* 去除地址栏拓展信息 */
+#identity-icon-box {
+    display: none !important;
+}
