@@ -1,0 +1,15 @@
+{{- $interactive := stdinIsATTY -}}
+
+{{- $email := "yidaduizuoye@outlook.com" -}}
+{{- if $interactive -}}
+{{-   $email = promptStringOnce . "email" "What is your email address?" $email -}}
+{{- end -}}
+
+[data]
+    email = {{ $email | quote }}
+
+[git]
+    autoCommit = true
+
+[diff]
+    command = "difft"
