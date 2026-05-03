@@ -1,12 +1,24 @@
 {{- $interactive := stdinIsATTY -}}
 
 {{- $email := "yidaduizuoye@outlook.com" -}}
-{{- if $interactive -}}
-{{-   $email = promptStringOnce . "email" "What is your email address?" $email -}}
+{{- $firefoxId := "" -}}
+{{- $firefoxPath := "default-release" -}}
+
+{{- if hasKey . "email" -}}
+{{-   $email = .email -}}
+{{- else if $interactive -}}
+{{-   $email = promptStringOnce . "email" "email" -}}
+{{- end -}}
+
+{{- if eq .chezmoi.os "linux" -}}
+{{-   $firefoxId = mozillaInstallHash "/usr/bin/firefox" -}}
 {{- end -}}
 
 [data]
     email = {{ $email | quote }}
+
+    firefoxId = {{ $firefoxId | quote }}
+    firefoxPath = {{ $firefoxPath | quote }}
 
 [git]
     autoCommit = true
