@@ -1,10 +1,12 @@
 {{- $interactive := stdinIsATTY -}}
+
 {{- $headless := false -}}
+{{- if or (env "SSH_CONNECTION") (eq .chezmoi.username "root") (eq .chezmoi.osRelease.id "debian" "ubuntu") -}}
+{{-   $headless = true -}}
+{{- end -}}
 
 {{- $email := "yidaduizuoye@outlook.com" -}}
-{{- if hasKey . "email" -}}
-{{-   $email = .email -}}
-{{- else if $interactive -}}
+{{- if $interactive -}}
 {{-   $email = promptStringOnce . "email" "email" -}}
 {{- end -}}
 
