@@ -1,8 +1,8 @@
-{{- if ne .chezmoi.os "linux" }}
+{{- if eq .chezmoi.os "windows" }}
 *
 !.config/fastfetch/
 !.config/git/
 !.config/mpv/
 
-!.config/startship.toml
+!.config/starship.toml
 {{- end }}
