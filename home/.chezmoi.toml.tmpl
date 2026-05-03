@@ -1,24 +1,26 @@
 {{- $interactive := stdinIsATTY -}}
+{{- $headless := false -}}
 
 {{- $email := "yidaduizuoye@outlook.com" -}}
-{{- $firefoxId := "" -}}
-{{- $firefoxPath := "default-release" -}}
-
 {{- if hasKey . "email" -}}
 {{-   $email = .email -}}
 {{- else if $interactive -}}
 {{-   $email = promptStringOnce . "email" "email" -}}
 {{- end -}}
 
-{{- if eq .chezmoi.os "linux" -}}
-{{-   $firefoxId = mozillaInstallHash "/usr/bin/firefox" -}}
+{{- $firefoxId := "" -}}
+{{- if not $headless -}}
+{{-     if eq .chezmoi.os "linux" -}}
+{{-         $firefoxId = mozillaInstallHash "/usr/bin/firefox" -}}
+{{-     end -}}
 {{- end -}}
 
 [data]
+    headless = {{ $headless }}
     email = {{ $email | quote }}
 
     firefoxId = {{ $firefoxId | quote }}
-    firefoxPath = {{ $firefoxPath | quote }}
+    firefoxPath = "default-release"
 
 [git]
     autoCommit = true
