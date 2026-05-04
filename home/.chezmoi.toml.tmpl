@@ -17,6 +17,11 @@
 {{-     end -}}
 {{- end -}}
 
+encryption = "age"
+[age]
+    identity = "~/.config/chezmoi/key.txt"
+    recipient = "age1jf642yn62un77mz0374n7dm3x22tppgxralpwchpf342hvw8457qw2gtfn"
+
 [data]
     headless = {{ $headless }}
     email = {{ $email | quote }}
