@@ -1,8 +1,15 @@
-{{- if eq .chezmoi.os "windows" }}
-*
+{{- if eq .chezmoi.os "windows" -}}
+**
+!.ssh/
 !.config/fastfetch/
 !.config/git/
 !.config/mpv/
-
 !.config/starship.toml
-{{- end }}
+{{- end -}}
+
+{{- if .headless -}}
+**
+!.config/fastfetch/
+!.config/fish/
+!.config/starship.toml
+{{- end -}}
