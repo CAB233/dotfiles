@@ -1,0 +1,114 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "right"
+  },
+  "language_models": {
+    "openai_compatible": {
+      
+    }
+  },
+  "ssh_connections": [
+    {
+      "host": "fcos",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/var/home/core"
+          ]
+        }
+      ],
+      "nickname": "fcos"
+    },
+    {
+      "host": "3a5k",
+      "args": [],
+      "projects": []
+    }
+  ],
+  "edit_predictions": {
+    "provider": "zed"
+  },
+  "icon_theme": "Material Icon Theme",
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000,
+    },
+  },
+  "auto_update": false,
+  "agent": {
+    "sidebar_side": "right",
+    "dock": "right",
+    "default_profile": "write",
+    "default_model": {
+      "effort": "high",
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4-6",
+      "enable_thinking": true,
+    },
+    "favorite_models": [],
+    "model_parameters": [],
+  },
+  "terminal": {
+    "shell": {
+      "program": "fish",
+    },
+  },
+  "git_panel": {
+    "show_count_badge": false,
+    "file_icons": true,
+    "sort_by_path": false,
+    "dock": "left",
+    "tree_view": false,
+  },
+  "tabs": {
+    "git_status": true,
+  },
+  "project_panel": {
+    "dock": "left",
+    "button": true,
+  },
+  "title_bar": {
+    "show_branch_icon": true,
+  },
+  "ui_font_family": "MiSans VF",
+  "buffer_font_family": "Maple Mono NF CN",
+  "context_servers": {
+    "Astro docs": {
+      "enabled": true,
+      "remote": false,
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://mcp.docs.astro.build/mcp"],
+    },
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "session": {
+    "trust_all_worktrees": true,
+  },
+  "ui_font_size": 16.0,
+  "buffer_font_size": 14.0,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "One Dark",
+  },
+  "languages": {
+    "Python": {
+      "language_servers": ["ty"],
+    },
+  },
+}
