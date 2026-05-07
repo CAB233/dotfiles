@@ -1,0 +1,27 @@
+#!/bin/bash
+
+set -euo pipefail 
+
+{{ if eq .profile "master" -}}
+echo "Installing system packages ..."
+{{ if eq .chezmoi.osRelease.id "arch" -}}
+sudo pacman -Syu --needed \
+{{- else if eq .chezmoi.osRelease.id "fedora" -}}
+sudo dnf install \
+{{- end }}
+    {{ range .packages.system }}{{ . }} {{ end }}
+
+echo "Installing Flatpak packages ..."
+flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak remote-add --user --if-not-exists zuoye-flatpak https://repo.zuoye.win/flatpak/zuoye.flatpakrepo
+flatpak install -y {{ range .packages.flatpak }}{{ . }} {{ end }}
+
+echo "Please check these packages manually"
+echo "{{ range .packages.external }}{{ . }} {{ end }}"
+
+{{ else }}
+
+echo "Skiping install packages ..."
+exit 0
+
+{{ end }}

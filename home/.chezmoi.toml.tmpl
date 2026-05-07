@@ -1,36 +1,134 @@
-{{- $interactive := stdinIsATTY -}}
-
-{{- $headless := false -}}
-{{- if or (env "SSH_CONNECTION") (eq .chezmoi.username "root") (eq .chezmoi.osRelease.id "debian" "ubuntu") -}}
-{{-   $headless = true -}}
-{{- end -}}
-
-{{- $email := "yidaduizuoye@outlook.com" -}}
-{{- if $interactive -}}
-{{-   $email = promptStringOnce . "email" "email" -}}
-{{- end -}}
+{{- $choices := list "master" "server" -}}
+{{- $profile := promptChoiceOnce . "profile" "Which type of profile are you choose" $choices -}}
 
 {{- $firefoxId := "" -}}
-{{- if not $headless -}}
-{{-     if eq .chezmoi.os "linux" -}}
-{{-         $firefoxId = mozillaInstallHash "/usr/bin/firefox" -}}
-{{-     end -}}
+{{- if eq $profile "master" -}}
+{{-     $firefoxId = mozillaInstallHash "/usr/bin/firefox" -}}
 {{- end -}}
 
+{{ if eq $profile "master" -}}
 encryption = "age"
 [age]
-    identity = "~/.config/chezmoi/key.txt"
-    recipient = "age1jf642yn62un77mz0374n7dm3x22tppgxralpwchpf342hvw8457qw2gtfn"
+identity = "~/.config/chezmoi/key.txt"
+recipient = "age1jf642yn62un77mz0374n7dm3x22tppgxralpwchpf342hvw8457qw2gtfn"
 
-[data]
-    headless = {{ $headless }}
-    email = {{ $email | quote }}
-
-    firefoxId = {{ $firefoxId | quote }}
-    firefoxPath = "default-release"
+[hooks.read-source-state.pre]
+command = "{{ .chezmoi.sourceDir }}/.decrypt-age-key.bash"
+{{- end }}
 
 [git]
-    autoCommit = true
+autoCommit = true
 
 [diff]
-    command = "difft"
+exclude = ["scripts"]
+command = "difft"
+
+[data]
+profile = {{ $profile | quote }}
+email = "yidaduizuoye@outlook.com"
+
+[data.firefox]
+id = {{ $firefoxId | quote }}
+profile = "default-release"
+
+[data.packages]
+system = [
+    # Essentials
+    "bat",
+    "difftastic",
+    "eza",
+    "fastfetch",
+    "fish",
+    "git",
+    "nano",
+    "starship",
+    
+    # Others
+    "android-tools",
+    "aria2",
+    "cmake",
+    "easyeffects",
+    "micro",
+    "mpv",
+    "nvtop",
+    "fd",
+    "firefox",
+    "flatpak",
+    "gamemode",
+    "gdu",
+    "htop",
+    "jq",
+    "just",
+    "ouch",
+    "podman",
+    "rclone",
+    "syncthing",
+    "uv",
+    "virt-manager",
+]
+
+# These packages likely not in official repositories
+external = [
+    # Tools
+    "msedit",
+    "nali",
+    "q",
+    "nexttrace",
+    "jsonnet",
+    "payload-dumper",
+    "shh",
+    
+    # System app
+    "howdy",
+    "sing-box",
+    "steam-devices",
+    
+    # Desktop app
+    "fcitx5",
+    "fcitx5-chinese-addons",
+    "fcitx5-configtool",
+    "fcitx5-gtk",
+    "fcitx5-lua",
+    "fcitx5-qt",
+    "kdeconnect",
+    "klassy",
+    "papirus-icon-theme",
+    "qbittorrent-enhanced",
+    "qdiskinfo",
+    "telegram",
+    "zotero",
+    
+    # Dev
+    "ciel",
+    "deno",
+    "vscode",
+    "zed",
+    "codex",
+    "opencode",
+    "git-filter-repo",
+    "git-lfs",
+    
+    # Fonts
+    "misans",
+    "jigmo",
+    "lxgwwenkai-screen",
+    "maple-font",
+    "nerd-fonts-symbols",
+    "wps-fonts",
+    "wqy-zenhei",
+]
+
+flatpak = [
+    "cn.wps.wps_365",
+    "com.github.tchx84.Flatseal",
+    "com.qq.QQ",
+    "com.tencent.WeChat",
+    "com.valvesoftware.Steam",
+    "com.valvesoftware.Steam.CompatibilityTool.Proton-GE",
+    "io.github.Foldex.AdwSteamGtk",
+    "io.github.waylyrics.Waylyrics",
+    "org.freedesktop.Platform.VulkanLayer.gamescope",
+    "org.jeffvli.feishin",
+    "org.prismlauncher.PrismLauncher",
+    "rocks.thorium.Thorium",
+]

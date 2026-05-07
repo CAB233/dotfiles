@@ -1,15 +1,10 @@
-{{- if eq .chezmoi.os "windows" -}}
-**
-!.ssh/
-!.config/fastfetch/
-!.config/git/
-!.config/mpv/
-!.config/starship.toml
-{{- end -}}
+key.txt.age
 
-{{- if .headless -}}
-**
-!.config/fastfetch/
-!.config/fish/
-!.config/starship.toml
+{{- if eq .profile "server" -}}
+.ssh/
+.ssh/**
+.config/git/
+.config/git/**
+.config/mozilla/
+.config/mozilla/**
 {{- end -}}

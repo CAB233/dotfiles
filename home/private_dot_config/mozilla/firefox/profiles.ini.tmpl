@@ -2,12 +2,12 @@
 StartWithLastProfile=1
 Version=2
 
-[Install{{ .firefoxId }}]
-Default={{ .firefoxPath }}
+[Install{{ .firefox.id }}]
+Default={{ .firefox.profile }}
 Locked=1
 
 [Profile0]
 Name=My Profile
 IsRelative=1
-Path={{ .firefoxPath }}
+Path={{ .firefox.profile }}
 Default=1
