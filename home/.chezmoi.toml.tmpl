@@ -6,7 +6,7 @@
 {{-     $firefoxId = mozillaInstallHash "/usr/bin/firefox" -}}
 {{- end -}}
 
-{{ if eq $profile "master" -}}
+{{ if and (eq $profile "master") (eq .chezmoi.os "linux") -}}
 encryption = "age"
 [age]
 identity = "~/.config/chezmoi/key.txt"

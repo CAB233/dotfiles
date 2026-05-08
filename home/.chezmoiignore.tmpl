@@ -8,3 +8,8 @@ key.txt.age
 .config/mozilla/
 .config/mozilla/**
 {{- end -}}
+
+{{- if ne .chezmoi.os "linux" -}}
+.config/fish/
+.config/fish/**
+{{- end -}}
