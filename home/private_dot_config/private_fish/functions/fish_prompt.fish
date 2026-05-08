@@ -1,24 +1,11 @@
-# https://github.com/adamchristiansen/vertical-fish/blob/main/functions/__vertical_util_is_ssh.fish
-function _is_ssh
-    set --query SSH_CLIENT || set --query SSH_CONNECTION || set --query SSH_TTY
-end
-
-# https://github.com/adamchristiansen/vertical-fish/blob/main/functions/__vertical_util_is_git.fish
-function _is_git
-    if not type -q git
-        return 1
-    end
-    command git rev-parse --git-dir > /dev/null 2> /dev/null
-end
-
 function _ssh
-    if _is_ssh
+    if __is_ssh
         echo -n -s (set_color --bold yellow)"(ssh)"
     end
 end
 
 function _login
-    if not _is_ssh
+    if not __is_ssh
         return
     end
 
@@ -35,7 +22,7 @@ function _dir_status
 end
 
 function _git_branch
-    if not _is_git
+    if not __is_git
         return
     end
 
