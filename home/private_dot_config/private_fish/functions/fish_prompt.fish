@@ -29,7 +29,19 @@ function _git_branch
     set --local branch (command git describe --tags --exact-match 2> /dev/null \
         || command git symbolic-ref -q --short HEAD \
         || command git rev-parse --short HEAD)
-    echo -n -s (set_color normal)"[ " (set_color --bold magenta)$branch (set_color normal)" ] "
+    set --local _status (command git status --porcelain 2>/dev/null)
+    set --local has_untracked (string match -r '^\?\?' $_status | count)
+    set --local has_staged (string match -r '^[ MADRC]' $_status | count)
+
+    if test -z "$_status"
+        set _color green
+    else if test $has_untracked -gt 0 -a $has_staged -eq 0
+        set _color magenta
+    else
+        set _color red
+    end
+
+    echo -n -s (set_color normal)"[ " (set_color --bold $_color)$branch (set_color normal)" ] "
 end
 
 function fish_prompt
