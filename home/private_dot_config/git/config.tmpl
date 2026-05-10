@@ -2,22 +2,30 @@
 	name = CAB233
 	email = {{ .email }}
 	signingkey = D43AB0BA625C5D89C734172262FFE3FEF4158CF1
+
 [core]
 	editor = micro
 	autocrlf = input
 	pager = less -x1,5
+
 [color]
 	status = auto
 	diff = auto
+
 [push]
 	default = simple
+
 [log]
 	date = iso
+
 [commit]
 	gpgsign = true
+
 [init]
 	defaultBranch = main
+
 [tag]
 	gpgSign = true
-{{/*[url "git@github.com:"]
-	insteadOf = "https://github.com/"*/}}
+
+[diff]
+	external = difft
