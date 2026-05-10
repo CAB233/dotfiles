@@ -1,15 +1,15 @@
 key.txt.age
 
-{{- if eq .profile "server" -}}
+{{ if eq .profile "server" -}}
 .ssh/
 .ssh/**
 .config/git/
 .config/git/**
 .config/mozilla/
 .config/mozilla/**
-{{- end -}}
+{{- end }}
 
-{{- if ne .chezmoi.os "linux" -}}
+{{ if ne .chezmoi.os "linux" -}}
 .config/fish/
 .config/fish/**
-{{- end -}}
+{{- end }}
