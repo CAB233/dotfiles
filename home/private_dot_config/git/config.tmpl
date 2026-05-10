@@ -2,8 +2,6 @@
 	name = CAB233
 	email = {{ .email }}
 	signingkey = D43AB0BA625C5D89C734172262FFE3FEF4158CF1
-[safe]
-	directory = *
 [core]
 	editor = micro
 	autocrlf = input
@@ -21,5 +19,5 @@
 	defaultBranch = main
 [tag]
 	gpgSign = true
-[url "git@github.com:"]
-	insteadOf = "https://github.com/"
+{{/*[url "git@github.com:"]
+	insteadOf = "https://github.com/"*/}}
