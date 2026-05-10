@@ -7,16 +7,16 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "cli_default_open_behavior": "new_window",
+  "show_edit_predictions": false,
   "outline_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "collaboration_panel": {
-    "dock": "right"
+    "dock": "right",
   },
   "language_models": {
-    "openai_compatible": {
-      
-    }
+    "openai_compatible": {},
   },
   "ssh_connections": [
     {
@@ -24,21 +24,20 @@
       "args": [],
       "projects": [
         {
-          "paths": [
-            "/var/home/core"
-          ]
-        }
+          "paths": ["/var/home/core"],
+        },
       ],
-      "nickname": "fcos"
+      "nickname": "fcos",
     },
     {
       "host": "3a5k",
       "args": [],
-      "projects": []
-    }
+      "projects": [],
+    },
   ],
   "edit_predictions": {
-    "provider": "zed"
+    "allow_data_collection": "no",
+    "provider": "zed",
   },
   "icon_theme": "Material Icon Theme",
   "autosave": {
@@ -80,18 +79,10 @@
     "button": true,
   },
   "title_bar": {
-    "show_branch_icon": true,
+    "show_branch_status_icon": true,
   },
   "ui_font_family": "MiSans VF",
   "buffer_font_family": "Maple Mono NF CN",
-  "context_servers": {
-    "Astro docs": {
-      "enabled": true,
-      "remote": false,
-      "command": "npx",
-      "args": ["-y", "mcp-remote", "https://mcp.docs.astro.build/mcp"],
-    },
-  },
   "telemetry": {
     "diagnostics": false,
     "metrics": false,
