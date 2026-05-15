@@ -24,8 +24,8 @@ function _git_branch
         return
     end
 
-    set --local branch (command git describe --tags --exact-match 2> /dev/null \
-        || command git symbolic-ref -q --short HEAD \
+    set --local branch ( command git symbolic-ref -q --short HEAD \
+        || command git describe --tags --exact-match 2> /dev/null \
         || command git rev-parse --short HEAD)
     set --local git_status (command git status --porcelain 2>/dev/null)
     set --local has_untracked (string match -r '^\?\?' $git_status | count)
