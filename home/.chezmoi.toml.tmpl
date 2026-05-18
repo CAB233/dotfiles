@@ -20,7 +20,7 @@ command = "{{ .chezmoi.sourceDir }}/.decrypt-age-key.bash"
 autoCommit = true
 
 [diff]
-exclude = ["scripts"]
+exclude = ["scripts", "externals"]
 command = "difft"
 
 [data]
