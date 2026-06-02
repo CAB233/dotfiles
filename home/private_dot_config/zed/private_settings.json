@@ -29,11 +29,6 @@
       ],
       "nickname": "fcos",
     },
-    {
-      "host": "3a5k",
-      "args": [],
-      "projects": [],
-    },
   ],
   "edit_predictions": {
     "allow_data_collection": "no",
@@ -68,7 +63,7 @@
     "show_count_badge": false,
     "file_icons": true,
     "sort_by_path": false,
-    "dock": "left",
+    "dock": "right",
     "tree_view": false,
   },
   "tabs": {
