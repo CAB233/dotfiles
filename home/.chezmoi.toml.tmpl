@@ -32,8 +32,8 @@ id = {{ $firefoxId | quote }}
 profile = "default-release"
 
 [data.packages]
-system = [
-    # Essentials
+# Used in every profiles
+essential = [
     "bat",
     "difftastic",
     "eza",
@@ -41,9 +41,10 @@ system = [
     "fish",
     "git",
     "nano",
-    "starship",
-    
-    # Others
+]
+
+# Only master
+system = [
     "android-tools",
     "aria2",
     "cmake",
