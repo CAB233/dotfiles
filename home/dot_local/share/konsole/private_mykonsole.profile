@@ -50,6 +50,7 @@ MarkerSize=2
 SearchLineOpacity=95
 
 [Terminal Features]
+BellMode=2
 BidiLineLTR=true
 BidiRenderingEnabled=true
 BlinkingCursorEnabled=true
