@@ -13,3 +13,33 @@ alias ls 'eza --time-style long-iso --modified --group-directories-first --icons
 {{- if eq .chezmoi.osRelease.id "arch" }}
 alias yay paru
 {{- end }}
+
+{{- if eq .chezmoi.osRelease.id "fedora" }}
+alias up 'sudo dnf makecache --refresh && sudo dnf up'
+{{- end }}
+
+{{ if eq .profile "master" -}}
+function c
+    for cmd in code codium
+        if type -q $cmd
+            command $cmd $argv
+            return
+        end
+    end
+
+    echo "Neither code nor codium was found" >&2
+    return 127
+end
+{{- end }}
+
+function e
+    for cmd in edit msedit
+        if type -q $cmd
+            command $cmd $argv
+            return
+        end
+    end
+
+    echo "Neither edit nor msedit was found" >&2
+    return 127
+end
