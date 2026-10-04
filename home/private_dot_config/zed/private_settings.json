@@ -42,7 +42,9 @@
   },
   "auto_update": false,
   "agent": {
-    "sidebar_side": "right",
+    "threads_sidebar": {
+      "position": "right"
+    },
     "dock": "right",
     "default_profile": "write",
   },
