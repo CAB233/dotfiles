@@ -18,4 +18,18 @@
     type = "file"
     url = "https://raw.githubusercontent.com/Samillion/ModernZ/refs/heads/main/extras/locale/modernz-locale.json"
     refreshPeriod = "168h"
+
+[".local/share/fcitx5/themes/"]
+    type = "archive"
+    url = "https://github.com/sanweiya/fcitx5-mellow-themes/archive/refs/heads/main.zip"
+    refreshPeriod = "168h"
+    stripComponents = 1
+    include = ["*/mellow-wechat/**", "*/mellow-wechat-dark/**"]
+
+[".config/mozilla/firefox/{{ .firefox.profile }}/chrome/"]
+    type = "archive"
+    url = {{ (gitHubLatestRelease "reizumii/parfait").TagName | toString | printf "https://github.com/reizumii/parfait/archive/refs/tags/%s.zip" | quote }}
+    refreshPeriod = "168h"
+    stripComponents = 1
+    include = ["*/parfait/**", "*/userChrome.css", "*/userContent.css"]
 {{- end -}}
