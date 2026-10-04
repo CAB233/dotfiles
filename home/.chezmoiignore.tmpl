@@ -1,15 +1,24 @@
 key.txt.age
 
 {{ if eq .profile "server" -}}
-.ssh/
-.ssh/**
-.config/git/
-.config/git/**
-.config/mozilla/
-.config/mozilla/**
-{{- end }}
+**
+!.config/
+!.config/bat/
+!.config/bat/**
+!.config/fastfetch/
+!.config/fastfetch/**
+!.config/nano/
+!.config/nano/**
+!.config/npm/
+!.config/npm/**
+!.config/wgetrc
+{{ if eq .chezmoi.os "linux" -}}
+!.config/fish/
+!.config/fish/**
+{{ end -}}
+{{ end -}}
 
 {{ if ne .chezmoi.os "linux" -}}
 .config/fish/
 .config/fish/**
-{{- end }}
+{{ end -}}
