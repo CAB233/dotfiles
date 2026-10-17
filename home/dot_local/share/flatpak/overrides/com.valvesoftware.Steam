@@ -1,5 +1,5 @@
 [Context]
-filesystems=~/Games
+filesystems=~/Games:create
 
 [Environment]
 XMODIFIERS=@im=fcitx
