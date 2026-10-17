@@ -1,0 +1,24 @@
+[Desktop Entry]
+Name = Open in VS Codium
+Type=Service
+ServiceTypes=KonqPopupMenu/Plugin
+MimeType=inode/directory
+X-KDE-Priority=TopLevel
+Actions=openInVSCodium
+
+[Desktop Action openInVSCodium]
+Name=Open in VS Codium
+Name[nl]=Openen in VS Codium
+Name[cs]=Otevřít ve VS Codium
+Name[es]=Abrir en VS Codium
+Name[pl]=Otwórz za pomocą VS Codium
+Name[zh]=在 VS Codium 中打开
+Name[zh_CN]=在 VS Codium 中打开
+Name[de]=In VS Codium öffnen
+Name[hi]=VS Codium में खोले
+Name[ml]=VS Codium ൽ തുറക്കുക
+Name[mr]=VS Codium मध्ये उघडा
+Name[kn]=VS Codium ನಲ್ಲಿ ತೆರೆಯಿರಿ
+Name[pt]=Abrir no VS Codium
+Icon=vscodium
+Exec=flatpak run --branch=stable --arch=x86_64 --command=com.vscodium.codium --file-forwarding com.vscodium.codium @@ %F @@
