@@ -36,6 +36,7 @@ x CARGO_HOME                $XDG_DATA_HOME/cargo
 x DOTNET_CLI_HOME           $XDG_DATA_HOME/dotnet
 x GNUPGHOME                 $XDG_DATA_HOME/gnupg
 x GOPATH                    $XDG_DATA_HOME/go
+GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
 x HISTFILE                  $XDG_STATE_HOME/bash/history
 x LESSHISTFILE              $XDG_DATA_HOME/less/history
 x NPM_CONFIG_USERCONFIG     $XDG_CONFIG_HOME/npm/npmrc

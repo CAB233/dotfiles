@@ -1,5 +1,6 @@
 {
-    "terminal.integrated.defaultProfile.linux": "bash",
+  "terminal.integrated.initialHint": false,  
+  "terminal.integrated.defaultProfile.linux": "bash",
     "terminal.integrated.profiles.linux": {
       "bash": {
         "path": "/app/bin/host-spawn",
@@ -10,6 +11,7 @@
     },
     "workbench.colorTheme": "One Dark Pro Flat",
     "workbench.iconTheme": "material-icon-theme",
+    "workbench.startupEditor": "none",
     "editor.minimap.enabled": false,
     "files.autoSave": "afterDelay",
     "files.autoGuessEncoding": true,
