@@ -1,2 +1,2 @@
 [Context]
-filesystems=~/.var/app/com.google.AndroidStudio/;~/Projects/;~/Android;host-etc;host-os
+filesystems=~/Android;~/Projects/;~/.var/app/com.google.AndroidStudio/;host-etc;host-os
