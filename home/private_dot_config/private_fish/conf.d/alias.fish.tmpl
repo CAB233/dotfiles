@@ -19,17 +19,7 @@ alias up 'sudo dnf makecache --refresh && sudo dnf up'
 {{- end }}
 
 {{ if eq .profile "master" -}}
-function c
-    for cmd in code codium
-        if type -q $cmd
-            command $cmd $argv
-            return
-        end
-    end
-
-    echo "Neither code nor codium was found" >&2
-    return 127
-end
+alias code 'flatpak run com.vscodium.codium'
 {{- end }}
 
 function e
