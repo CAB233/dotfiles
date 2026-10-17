@@ -1,0 +1,34 @@
+{
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.profiles.linux": {
+      "bash": {
+        "path": "/app/bin/host-spawn",
+        "args": ["fish"],
+        "icon": "terminal-bash",
+        "overrideName": true
+      }
+    },
+    "workbench.colorTheme": "One Dark Pro Flat",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.minimap.enabled": false,
+    "files.autoSave": "afterDelay",
+    "files.autoGuessEncoding": true,
+    "files.insertFinalNewline": true,
+    "files.eol": "\n",
+    "files.associations": {
+        "*.desktop": "properties",
+        "*.json*": "jsonc",
+        "*.conf": "properties",
+        "*.service": "ini",
+        "prepare": "shellscript",
+        "defines": "shellscript",
+        "beyond": "shellscript",
+        "build": "shellscript",
+        "*.bu": "yaml",
+        "*.ign": "json",
+        "postinst": "shellscript",
+        "spec": "shellscript"
+    },
+    "window.controlsStyle": "custom",
+    "window.dialogStyle": "custom",
+}
