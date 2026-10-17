@@ -1,6 +1,6 @@
 [Context]
-filesystems=~/Android;~/Projects/;!home
-persistent=.android;.gradle;.java
+filesystems=~/Projects/;~/Android;!home
+persistent=.android
 
 [Environment]
 JAVA_HOME=
