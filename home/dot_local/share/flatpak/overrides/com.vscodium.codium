@@ -1,2 +1,2 @@
 [Context]
-filesystems=xdg-data;~/Projects;~/.var/app/com.google.AndroidStudio/;~/Android;host-etc;host-os;!host
+filesystems=xdg-config/git:ro;~/Android;~/Projects;xdg-data;!host
