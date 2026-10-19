@@ -21,4 +21,4 @@ Name[mr]=VS Codium मध्ये उघडा
 Name[kn]=VS Codium ನಲ್ಲಿ ತೆರೆಯಿರಿ
 Name[pt]=Abrir no VS Codium
 Icon=vscodium
-Exec=flatpak run --branch=stable --arch=x86_64 --command=com.vscodium.codium --file-forwarding com.vscodium.codium @@ %F @@
+Exec=flatpak run com.vscodium.codium %U
