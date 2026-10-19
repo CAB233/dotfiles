@@ -1,2 +1,3 @@
 [Context]
-filesystems=~/Android;~/Projects/;~/.var/app/com.google.AndroidStudio/;host-etc;host-os
+sockets=ssh-auth
+filesystems=xdg-cache;xdg-data;~/Android;~/Projects/;xdg-config/git:ro;host-os
